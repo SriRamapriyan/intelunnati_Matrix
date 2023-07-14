@@ -10,7 +10,7 @@
 
   
 cnn model using fashion MNIST dataset 
-# cnn model
+# cnn model using computer vision
 
 
 # pre requisites
