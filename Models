@@ -1,1 +1,35 @@
+Model Building
+model = Sequential([
+    Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1)),
+    MaxPooling2D((2, 2)),
+    Conv2D(64, (3, 3), activation='relu'),
+    MaxPooling2D((2, 2)),
+    Flatten(),
+    Dense(128, activation='relu'),
+    Dense(num_classes, activation='softmax')
+])
 
+
+The model consists of the following layers:
+
+Convolutional Layer: Conv2D(32, (3, 3), activation='relu', input_shape=(28, 28, 1))
+
+This layer has 32 filters of size (3, 3).
+The activation='relu' argument means that the ReLU activation function is applied after the convolution operation.
+The input_shape=(28, 28, 1) specifies the shape of the input data, which is a single-channel 28x28 image.
+MaxPooling Layer: MaxPooling2D((2, 2))
+
+This layer performs max pooling with a pool size of (2, 2), reducing the spatial dimensions by half.
+Convolutional Layer: Conv2D(64, (3, 3), activation='relu')
+
+This layer has 64 filters of size (3, 3) and uses ReLU activation.
+MaxPooling Layer: MaxPooling2D((2, 2))
+
+Another max pooling layer with a pool size of (2, 2).
+Flatten Layer: Flatten()
+
+This layer flattens the 2D feature maps into a 1D vector, preparing the data for the fully connected layers.
+Dense Layers: Dense(128, activation='relu') and Dense(num_classes, activation='softmax')
+
+These are fully connected layers with 128 and num_classes (10 in this case) neurons, respectively.
+The last layer uses the softmax activation function to convert the final layer outputs into probabilities for each class.
